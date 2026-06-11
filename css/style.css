@@ -49,8 +49,24 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
   font-family: "Source Sans Pro", sans-serif;
+  background-color: #0a0a0a;
+  color: #e0e0e0;
+  background: linear-gradient(-45deg, #0a0a0a, #1a1a2e, #0a0a0a, #16213e);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
 }
 
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 a {
   text-decoration: none;
   color: inherit;
@@ -127,7 +143,7 @@ textarea {
   top: calc(100% + 1.5rem);
   height: 5px;
   width: 3rem;
-  background: #0062b9;
+  background: #7c4dff;
   left: 50%;
   transform: translateX(-50%);
   border-radius: 5px;
@@ -191,13 +207,13 @@ textarea {
   font-size: 1.6rem;
 }
 .btn--theme {
-  background: #0062b9;
+  background: #7c4dff;
   color: #fff;
 }
 .btn--theme-inv {
-  color: #0062b9;
+  color: #7c4dff;
   background: #fff;
-  border: 2px solid #0062b9;
+  border: 2px solid #7c4dff;
   box-shadow: none;
   padding: calc(1.5rem - 2px) calc(5rem - 2px);
 }
@@ -230,8 +246,9 @@ textarea {
 
 .home-hero {
   color: #fff;
-  background: linear-gradient(to right, rgba(0, 98, 185, 0.8), rgba(0, 98, 185, 0.8)), url(../../assets/svg/common-bg.svg);
+  background: linear-gradient(to right, rgba(124, 77, 255, 0.6), rgba(0, 212, 255, 0.6)), url(../../assets/svg/common-bg.svg);
   background-position: center;
+  background-blend-mode: overlay;
   height: 100vh;
   min-height: 80rem;
   max-height: 120rem;
@@ -311,7 +328,7 @@ textarea {
 }
 
 .about {
-  background: rgb(250, 250, 250);
+  background: transparent;
 }
 .about__content {
   display: grid;
@@ -336,7 +353,7 @@ textarea {
 }
 .about__content-details-para {
   font-size: 1.8rem;
-  color: grey;
+  color: #a0a0a0;
   max-width: 60rem;
   line-height: 1.7;
   margin-bottom: 1rem;
@@ -402,7 +419,7 @@ textarea {
 }
 .projects__row-content-desc {
   font-size: 1.8rem;
-  color: grey;
+  color: #a0a0a0;
   max-width: 60rem;
   line-height: 1.7;
   margin-bottom: 3rem;
@@ -414,13 +431,15 @@ textarea {
 }
 
 .contact {
-  background: linear-gradient(to right, rgba(0, 98, 185, 0.8), rgba(0, 98, 185, 0.8)), url(../../assets/svg/common-bg.svg);
+  background: linear-gradient(to right, rgba(124, 77, 255, 0.7), rgba(0, 212, 255, 0.7)), url(../../assets/svg/common-bg.svg);
   background-size: cover;
   background-position: center;
+  background-blend-mode: overlay;
 }
 .contact__form-container {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(10px);
   padding: 4rem;
   margin-top: 6rem;
   max-width: 80rem;
@@ -443,7 +462,7 @@ textarea {
   }
 }
 .contact__form-label {
-  color: #666;
+  color: #e0e0e0;
   font-size: 1.4rem;
   letter-spacing: 1px;
   font-weight: 700;
@@ -452,13 +471,13 @@ textarea {
   text-align: left;
 }
 .contact__form-input {
-  color: #333;
+  color: #e0e0e0;
   padding: 2rem;
   width: 100%;
-  border: 1px solid rgb(235, 235, 235);
+  border: 1px solid var(--border, #333);
   font-size: 1.6rem;
   letter-spacing: 0px;
-  background: #f0f0f0;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 5px;
   font-weight: 600;
   /* Code for Modern Browsers */
@@ -523,7 +542,7 @@ textarea {
 
 .project-cs-hero {
   color: #fff;
-  background: linear-gradient(to right, rgba(0, 98, 185, 0.8), rgba(0, 98, 185, 0.8)), url(../../assets/svg/common-bg.svg);
+  background: linear-gradient(to right, rgba(124, 77, 255, 0.8), rgba(124, 77, 255, 0.8)), url(../../assets/svg/common-bg.svg);
   background-size: cover;
   background-position: center;
   position: relative;
@@ -660,7 +679,7 @@ textarea {
   transition: color 0.3s;
 }
 .header__logo-container:hover {
-  color: #0062b9;
+  color: #7c4dff;
 }
 .header__logo-img-cont {
   width: 5rem;
@@ -668,7 +687,7 @@ textarea {
   border-radius: 50px;
   overflow: hidden;
   margin-right: 1.5rem;
-  background: #0062b9;
+  background: #7c4dff;
 }
 @media only screen and (max-width: 56.25em) {
   .header__logo-img-cont {
@@ -709,7 +728,7 @@ textarea {
   transition: color 0.3s;
 }
 .header__link:hover {
-  color: #0062b9;
+  color: #7c4dff;
 }
 @media only screen and (max-width: 56.25em) {
   .header__link {
@@ -769,7 +788,7 @@ textarea {
   transition: color 0.3s;
 }
 .header__sm-menu-link a:hover {
-  color: #0062b9;
+  color: #7c4dff;
 }
 .header__sm-menu-link:first-child a {
   border-top: 1px solid #eee;
