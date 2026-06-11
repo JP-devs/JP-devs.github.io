@@ -3,84 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JP | Developer</title>
+    <title>JP | Software Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="window">
-        <div class="title-bar">
-            <div class="window-controls">
-                <span class="control red"></span>
-                <span class="control yellow"></span>
-                <span class="control green"></span>
-            </div>
-            <div class="window-title">jp_portfolio.exe</div>
+    <!-- Ambient Background -->
+    <div class="ambient-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-logo">JP</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#stack">Stack</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
         </div>
-        <div class="main-container">
-            <aside class="sidebar">
-                <div class="sidebar-header">EXPLORER</div>
-                <ul class="file-list">
-                    <li class="file-item active" data-file="about">
-                        <span class="icon">📄</span> about.me
-                    </li>
-                    <li class="file-item" data-file="stack">
-                        <span class="icon">🛠️</span> stack.json
-                    </li>
-                    <li class="file-item" data-file="projects">
-                        <span class="icon">📁</span> projects/
-                    </li>
-                    <li class="file-item" data-file="contact">
-                        <span class="icon">✉️</span> contact.txt
-                    </li>
-                </ul>
-            </aside>
-            <main class="editor">
-                <div class="tabs">
-                    <div class="tab active" id="tab-about">about.me</div>
-                    <div class="tab" id="tab-stack">stack.json</div>
-                    <div class="tab" id="tab-projects">projects/</div>
-                    <div class="tab" id="tab-contact">contact.txt</div>
+    </nav>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="hero-content reveal">
+                <h1 class="glitch" data-text="JP">JP</h1>
+                <p class="subtitle">Building high-performance systems & elegant interfaces</p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn primary">View Projects</a>
+                    <a href="#contact" class="btn secondary">Get in Touch</a>
                 </div>
-                <div class="code-area">
-                    <div class="line-numbers"></div>
-                    <div class="content">
-                        <div id="about" class="file-content active">
-                            <p><span class="keyword">const</span> <span class="variable">developer</span> = {</p>
-                            <p>&nbsp;&nbsp;name: <span class="string">'JP'</span>,</p>
-                            <p>&nbsp;&nbsp;role: <span class="string">'Software Developer'</span>,</p>
-                            <p>&nbsp;&nbsp;focus: [<span class="string">'High-performance apps'</span>, <span class="string">'Clean interfaces'</span>],</p>
-                            <p>&nbsp;&nbsp;bio: <span class="string">'Focused on low-level engineering, automation, and full-stack development.'</span></p>
-                            <p>};</p>
-                        </div>
-                        <div id="stack" class="file-content">
-                            <p>{</p>
-                            <p>&nbsp;&nbsp;<span class="keyword">"languages"</span>: [<span class="string">"Python"</span>, <span class="string">"C"</span>, <span class="string">"Java"</span>, <span class="string">"JS"</span>, <span class="string">"HTML"</span>, <span class="string">"CSS"</span>],</p>
-                            <p>&nbsp;&nbsp;<span class="keyword">"backend"</span>: [<span class="string">"Supabase"</span>, <span class="string">"MongoDB"</span>, <span class="string">"PocketBase"</span>],</p>
-                            <p>&nbsp;&nbsp;<span class="keyword">"specialization"</span>: [<span class="string">"Java Fabric Ecosystem"</span>, <span class="string">"Maven"</span>, <span class="string">"Server-side Automation"</span>],</p>
-                            <p>&nbsp;&nbsp;<span class="keyword">"env"</span>: [<span class="string">"Linux/Unix"</span>, <span class="string">"IntelliJ IDEA"</span>]</p>
-                            <p>}</p>
-                        </div>
-                        <div id="projects" class="file-content">
-                            <p><span class="keyword">class</span> <span class="variable">Portfolio</span> {</p>
-                            <p>&nbsp;&nbsp;projects = [</p>
-                            <p>&nbsp;&nbsp;&nbsp;&nbsp;{ title: <span class="string">'Automation Scripting'</span>, desc: <span class="string">'Server-side automation tools'</span> },</p>
-                            <p>&nbsp;&nbsp;&nbsp;&nbsp;{ title: <span class="string">'Full-Stack App'</span>, desc: <span class="string">'High-performance web interface'</span> },</p>
-                            <p>&nbsp;&nbsp;];</p>
-                            <p>}</p>
-                        </div>
-                        <div id="contact" class="file-content">
-                            <p><span class="comment">// Reach out to me here</span></p>
-                            <p>GitHub: <a href="https://github.com/JP-devs" target="_blank" class="link">github.com/JP-devs</a></p>
-                            <p>Email: <span class="string">'your-email@example.com'</span></p>
-                        </div>
+            </div>
+        </section>
+
+        <section id="about" class="section reveal">
+            <h2 class="section-title">Overview</h2>
+            <div class="glass-card">
+                <p>Software developer specialized in low-level engineering and full-stack automation. I bridge the gap between high-performance backend systems and fluid, modern user experiences.</p>
+            </div>
+        </section>
+
+        <section id="stack" class="section reveal">
+            <h2 class="section-title">Technical Stack</h2>
+            <div class="stack-container">
+                <div class="stack-category">
+                    <h3>Languages</h3>
+                    <div class="tags">
+                        <span>Python</span><span>C</span><span>Java</span><span>JS</span><span>HTML</span><span>CSS</span>
                     </div>
                 </div>
-            </main>
-        </div>
-    </div>
+                <div class="stack-category">
+                    <h3>Backend</h3>
+                    <div class="tags">
+                        <span>Supabase</span><span>MongoDB</span><span>PocketBase</span>
+                    </div>
+                </div>
+                <div class="stack-category">
+                    <h3>Specialization</h3>
+                    <div class="tags">
+                        <span>Fabric Ecosystem</span><span>Maven</span><span>Automation</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section reveal">
+            <h2 class="section-title">Featured Work</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Automation Suite</h3>
+                        <span class="project-tag">System</span>
+                    </div>
+                    <p>Advanced server-side automation tools designed for workflow optimization and resource management.</p>
+                    <a href="#" class="project-link">Explore &rarr;</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Full-Stack Engine</h3>
+                        <span class="project-tag">Web</span>
+                    </div>
+                    <p>High-concurrency web interface integrated with secure authentication and real-time data sync.</p>
+                    <a href="#" class="project-link">Explore &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section reveal">
+            <h2 class="section-title">Connect</h2>
+            <div class="contact-card glass-card">
+                <p>Interested in collaborating or hiring?</p>
+                <div class="contact-links">
+                    <a href="https://github.com/JP-devs" target="_blank" class="contact-item">GitHub</a>
+                    <a href="mailto:your-email@example.com" class="contact-item">Email</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 JP. Built with precision.</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

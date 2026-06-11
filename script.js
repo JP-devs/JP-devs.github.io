@@ -1,71 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const fileItems = document.querySelectorAll('.file-item');
-    const tabs = document.querySelectorAll('.tab');
-    const contents = document.querySelectorAll('.file-content');
-
-    function switchFile(fileId) {
-        // Update sidebar
-        fileItems.forEach(item => {
-            item.classList.toggle('active', item.dataset.file === fileId);
-        });
-
-        // Update tabs
-        tabs.forEach(tab => {
-            tab.classList.toggle('active', tab.id === `tab-${fileId}`);
-        });
-
-        // Update content
-        contents.forEach(content => {
-            content.classList.toggle('active', content.id === fileId);
-        });
-    }
-
-    fileItems.forEach(item => {
-        item.addEventListener('click', () => {
-            switchFile(item.dataset.file);
-        });
-    });
-
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const fileId = tab.id.replace('tab-', '');
-            switchFile(fileId);
-        });
-    });
-
-    // Generate line numbers
-    function updateLineNumbers() {
-        const activeContent = document.querySelector('.file-content.active');
-        const lineNumbersContainer = document.querySelector('.line-numbers');
-        const lines = activeContent.querySelectorAll('p').length;
-        
-        lineNumbersContainer.innerHTML = '';
-        for (let i = 1; i <= lines; i++) {
-            const div = document.createElement('div');
-            div.textContent = i;
-            lineNumbersContainer.appendChild(div);
-        }
-    }
-
-    // Initial line numbers
-    updateLineNumbers();
-
-    // Update line numbers when switching files
-    const observer = new MutationObserver(() => {
-        updateLineNumbers();
-    });
+    // Reveal animations on scroll
+    const revealElements = document.querySelectorAll('.reveal');
     
-    observer.observe(document.querySelector('.content'), { 
-        childList: true, 
-        subtree: true, 
-        attributes: true 
+    const revealOnScroll = () => {
+        revealElements.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            if (elementTop < windowHeight * 0.85) {
+                el.classList.add('active');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // Initial check
+
+    // Parallax effect for ambient blobs
+    document.addEventListener('mousemove', (e) => {
+        const mouseX = e.clientX / window.innerWidth;
+        const mouseY = e.clientY / window.innerHeight;
+
+        const blobs = document.querySelectorAll('.blob');
+        blobs.forEach((blob, index) => {
+            const speed = (index + 1) * 30;
+            const x = (mouseX - 0.5) * speed;
+            const y = (mouseY - 0.5) * speed;
+            blob.style.transform = `translate(${x}px, ${y}px)`;
+        });
     });
 
-    // Since we just toggle 'active' class, we need to manually trigger update
-    fileItems.forEach(item => {
-        item.addEventListener('click', updateLineNumbers);
-    });
-    tabs.forEach(tab => {
-        tab.addEventListener('click', updateLineNumbers);
+    // Smooth scrolling for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
     });
 });
